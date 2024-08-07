@@ -2,20 +2,28 @@
 
 Welcome to my personal and opinionated neovim repository! 🎉
 
-### Dashboard: 
-![Image Title 1](preview/dashboard.png)
+## Preview
 
-### Modes:
-![Image Title 2](preview/modes.png)
+### Dashboard
+<div style="text-align: center;">
+    <img src="preview/dashboard.png" alt="Dashboard" width="600" height="340">
+</div>
 
-### Telescope/Bufferline:
-![Image Title 3](preview/telescope.png)
+### Modes
+<div style="text-align: center;">
+    <img src="preview/modes.png" alt="Modes" width="500" height="250">
+</div>
+
+### Telescope/Bufferline
+<div style="text-align: center;">
+    <img src="preview/telescope.png" alt="Telescope/Bufferline" width="600" height="340">
+</div>
 
 ## What's Inside?
 
 ### File tree of the configuration
 
-<prev>
+<pre>
 ├─ init.lua
 └─ lua/
     ├── config/
@@ -25,7 +33,7 @@ Welcome to my personal and opinionated neovim repository! 🎉
     └── user/
          ├── keymaps.lua
          └── set.lua
-</prev>
+</pre>
 
 ### Files description
 
@@ -41,7 +49,7 @@ Here's a quick overview of the plugins included in this repo:
   - **`telescope.lua`**: Sets up Telescope for powerful file and text searching.
   - **`treesitter.lua`**: Configures Tree-sitter for improved syntax highlighting.
 
-Caution! **colorscheme.lua** by default uses my terminal color. if you want to change that, go to **colorscheme.lua** and change the **transparency = true** line. (neovim will look a bit uglier, but that's your problem, not mine!)
+Caution! `colorscheme.lua` by default uses my terminal color. if you want to change that, go to `colorscheme.lua` and change the `transparency = true` line. (neovim will look a bit uglier, but that's your problem, not mine!)
 
 And also, the configuration files for neovim:
 
@@ -52,8 +60,11 @@ And also, the configuration files for neovim:
 
 To get up and running with this setup:
 
-0. **necessary packages**:
-    misfortune
+0. **necessary packages (according to your distro)**:
+    ```bash
+    sudo pacman -S lazygit
+    sudo apt install lazygit
+    sudo dnf install lazygit
 
 1. **Clone the Repository**:
    ```bash
@@ -61,6 +72,7 @@ To get up and running with this setup:
 
 2. **Remove the unecessary files**:
    ```bash
+    cd ~/.config/nvim
     rm -rf preview README.md .git
 
 3. **Install Plugins: Open Neovim and run :Lazy sync (just press 's' in the dashboard) to install all the plugins specified in the configuration.**
