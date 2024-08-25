@@ -50,31 +50,30 @@ Here's a quick overview of the plugins included in this repo:
   - **`netrw.lua`**: Tweaks the netrw file explorer settings.
   - **`telescope.lua`**: Sets up Telescope for powerful file and text searching.
   - **`treesitter.lua`**: Configures Tree-sitter for improved syntax highlighting.
-  - **`vimtex.lua`**: Gives the ability to write and compile .tex files.
+  - **`vimtex.lua`**: Gives the ability to compile and better manipulate .tex files.
   - **`ultisnips.lua`**: Customizes snippets to use in latex.
   - **`leetcode.lua`**: Leetcode, but in neovim. 
 
-Caution! `colorscheme.lua` by default uses my terminal color. if you want to change that, go to `colorscheme.lua` and change the `transparency = true` line. (neovim will look a bit uglier, but that's your problem, not mine!)
+#### Caution!
+`colorscheme.lua` by default uses my terminal color. if you want to change that, go to `colorscheme.lua` and change the `transparency = true` line. (neovim will look a bit uglier, but that's your problem, not mine!)
 
 ### Other Files
+The initialization file for lazy:
+  - **`config/lazy.lua`**: Initializes and updates lazy (our plugin manager).
+
 The configuration files for neovim:
 
-  - **`keymaps.lua`**: Custom key mappings for efficient navigation.
-  - **`set.lua`**: General Neovim settings and options.
+  - **`user/keymaps.lua`**: Custom key mappings for efficient navigation.
+  - **`user/set.lua`**: General Neovim settings and options.
 
 Templates and Snippets (specially for latex):
+
   - **`.snippets/tex.snippets`**: Snippets that will be used by ultisnips.
   - **`.templates/template.tex`**: Templates for exercises resolutions.
 
 ## Getting Started
 
 To get up and running with this setup:
-
-0. **necessary packages (according to your distro)**:
-    ```bash
-    sudo pacman -S lazygit
-    sudo apt install lazygit
-    sudo dnf install lazygit
 
 1. **Clone the Repository**:
    ```bash
@@ -85,6 +84,6 @@ To get up and running with this setup:
     cd ~/.config/nvim
     rm -rf preview README.md .git
 
-3. **Install Plugins: Open Neovim and run :Lazy sync (just press 's' in the dashboard) to install all the plugins specified in the configuration.**
+3. **Install Plugins: Open Neovim and run :Lazy sync (just press 's' in the dashboard) to install all the plugins specified in the configuration. (if lazy doesn't do it automatically)**
 
 4. **Done!**
