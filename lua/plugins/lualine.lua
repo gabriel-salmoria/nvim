@@ -4,7 +4,7 @@ return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     lazy = true,
-    event = "BufRead",
+    event = {"BufRead", "BufNewFile", "WinEnter"},
 	config = function()
 		local colors = {
 			base        = '#191724',

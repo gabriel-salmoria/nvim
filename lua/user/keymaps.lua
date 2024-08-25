@@ -23,19 +23,15 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, opts)
 vim.keymap.set('n', '<leader>bn', ':enew<CR>', opts)
 
 
+-- my own scripts --
+
+-- rip
+
+
 --- bufferline cmds ---
 
 -- use 1-9 to navigate the buffers
-vim.api.nvim_set_keymap('n', '<leader>1', '<cmd>lua require("bufferline").go_to(1, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>2', '<cmd>lua require("bufferline").go_to(2, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>3', '<cmd>lua require("bufferline").go_to(3, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>4', '<cmd>lua require("bufferline").go_to(4, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>5', '<cmd>lua require("bufferline").go_to(5, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>6', '<cmd>lua require("bufferline").go_to(6, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>7', '<cmd>lua require("bufferline").go_to(7, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>8', '<cmd>lua require("bufferline").go_to(8, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>9', '<cmd>lua require("bufferline").go_to(9, true)<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>$', '<cmd>lua require("bufferline").go_to(-1, true)<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>1', '<cmd>lua require("bufferline").go_to(1, true)<CR>', opts)
 
 --- telescope --- 
 
@@ -52,3 +48,33 @@ vim.keymap.set('n', '<leader>ps', function()
     vim.cmd('Telescope grep_string search=' .. vim.fn.escape(search, ' '))
 end)
 
+
+--- vimtex ---
+
+-- Define a global function to open VimTeX errors in a full window
+function _G.open_vimtex_errors()
+  vim.cmd('botright copen')
+  vim.cmd('wincmd J')
+  vim.cmd('resize 999')
+end
+
+-- Map a key to call the global function
+vim.api.nvim_set_keymap('n', '<leader>w', [[:lua _G.open_vimtex_errors()<CR>]], opts)
+
+-- Expand or jump forward in UltiSnips
+vim.keymap.set('i', '<C-j>', function()
+  if vim.fn.pumvisible() == 1 then
+    return '<C-n>'
+  else
+    return vim.fn['UltiSnips#ExpandSnippetOrJump']()
+  end
+end, opts)
+
+-- Jump backward in UltiSnips
+vim.keymap.set('i', '<C-k>', function()
+  if vim.fn.pumvisible() == 1 then
+    return '<C-p>'
+  else
+    return vim.fn['UltiSnips#JumpBackwards']()
+  end
+end, opts)

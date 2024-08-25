@@ -54,6 +54,9 @@ require("rose-pine").setup({
     },
 
     highlight_groups = {
+        ["@variable"] = { fg = "#8eabf2" }, -- Baby blue color for variables
+        ["@function"] = { fg = "love" },
+
     }
 })
 

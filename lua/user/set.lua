@@ -4,6 +4,8 @@
 
 -- leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader= ","
+
 
 -- pretty colors
 vim.opt.termguicolors = true

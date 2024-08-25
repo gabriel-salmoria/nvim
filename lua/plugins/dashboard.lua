@@ -30,24 +30,8 @@ return {
 
 
         local function get_footer()
-            -- Check if misfortune command is available
-            local handle = io.popen('command -v misfortune')
-            local misfortune_installed = handle:read('*a'):match('%S+')
-            handle:close()
-
-            if misfortune_installed then
-                -- Misfortune is installed, get a random line from it.
-                local handle = io.popen('misfortune science wisdom art education computers politics law science -s')
-                local result = handle:read('*a')
-                handle:close()
-
-                -- Remove any trailing newline characters
-                result = result:gsub('\n', ' '):gsub('\r', '')
-                return result
-            else
-                -- Misfortune is not installed, return a default string
-                return 'The happiness of your life depends upon the quality of your thoughts - Marcus Aurelius'
-            end
+            -- Misfortune is not installed, return a default string
+            return 'The happiness of your life depends upon the quality of your thoughts - Marcus Aurelius'
         end
         -- Define the art
         local art_string = [[
