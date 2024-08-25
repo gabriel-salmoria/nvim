@@ -24,37 +24,47 @@ Welcome to my personal and opinionated neovim repository! 🎉
 ### File tree of the configuration
 
 <pre>
-├─ init.lua
-└─ lua/
-    ├── config/
-    │    └── lazy.lua
-    ├── plugins/
-    │    └── (all plugins)
-    └── user/
-         ├── keymaps.lua
-         └── set.lua
+├── init.lua
+├── lua/
+│   ├── config/
+│   │   └── lazy.lua
+│   ├── plugins/
+│   │   ├── (plugins)
+│   └── user/
+│       ├── keymaps.lua
+│       └── set.lua
+├── .snippets/
+│   └── (snippets)
+└── .templates/
+    └── (templates)
 </pre>
 
-### Files description
+### Included Plugins
 
 Here's a quick overview of the plugins included in this repo:
 
-  - **`autopairs.lua`**: Autocompletes parentheses and quotes.
   - **`bufferline.lua`**: Enhances the buffer line with a tab-like interface.
   - **`colorscheme.lua`**: Sets the color scheme for a pleasant visual experience.
   - **`dashboard.lua`**: Customizes the startup dashboard with a personalized touch.
-  - **`lazygit.lua`**: Integrates LazyGit for a seamless git experience.
   - **`lualine.lua`**: Configures the status line for a clean and informative display.
   - **`netrw.lua`**: Tweaks the netrw file explorer settings.
   - **`telescope.lua`**: Sets up Telescope for powerful file and text searching.
   - **`treesitter.lua`**: Configures Tree-sitter for improved syntax highlighting.
+  - **`vimtex.lua`**: Gives the ability to write and compile .tex files.
+  - **`ultisnips.lua`**: Customizes snippets to use in latex.
+  - **`leetcode.lua`**: Leetcode, but in neovim. 
 
 Caution! `colorscheme.lua` by default uses my terminal color. if you want to change that, go to `colorscheme.lua` and change the `transparency = true` line. (neovim will look a bit uglier, but that's your problem, not mine!)
 
-And also, the configuration files for neovim:
+### Other Files
+The configuration files for neovim:
 
   - **`keymaps.lua`**: Custom key mappings for efficient navigation.
   - **`set.lua`**: General Neovim settings and options.
+
+Templates and Snippets (specially for latex):
+  - **`.snippets/tex.snippets`**: Snippets that will be used by ultisnips.
+  - **`.templates/template.tex`**: Templates for exercises resolutions.
 
 ## Getting Started
 
