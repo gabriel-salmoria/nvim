@@ -4,16 +4,21 @@ return {
     init = function()
         -- VimTeX configuration
         vim.g.vimtex_compiler_method = "latexmk"
+        vim.g.vimtex_compiler_latexmk_engines = { _ = '-lualatex' }
+
         vim.g.vimtex_compiler_latexmk = {
             aux_dir = '.aux_files',
             options = {
                 '-pdf',
+                '-shell-escape',
                 '-silent',
                 '-interaction=nonstopmode',
-                '-synctex=0',
-                '-auxdir=.aux_files',  -- Store auxiliary files in a hidden directory
+                '-synctex=1',
+                '-auxdir=.aux_files',
+                '-bibtex'    -- important: tells latexmk to run biber/bibtex
             }
         }
+
         vim.g.vimtex_view_method = "zathura"
 
         -- Prevent VimTeX from opening the quickfix window automatically
