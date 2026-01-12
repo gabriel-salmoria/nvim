@@ -9,7 +9,7 @@ return {
 		local colors = {
 			base        = '#191724',
 			surface     = '#1f1d2e',
-			overlay     = '#1a102a', -- changed
+			overlay     = '#191724', -- changed
 			muted       = '#6e6a86',
 			subtle      = '#908caa',
 			text        = '#e0def4',
